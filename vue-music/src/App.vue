@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png">
-    <router-view/>-->
+    <!-- <img src="./assets/logo.png"> -->
     <m-header></m-header>
+    <tab></tab>
+    <router-view />
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import MHeader from 'components/m-header/m-header'
+import Tab from 'components/tab/tab'
 export default {
-  components: { MHeader }
+  components: {
+    MHeader
+  ,Tab}
 }
 </script>
 
