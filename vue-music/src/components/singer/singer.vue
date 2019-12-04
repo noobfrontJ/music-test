@@ -5,7 +5,7 @@
   </div>
 </template>
 
-// <script type="text/ecmascript-6">
+<script type="text/ecmascript-6">
 //   import ListView from 'base/listview/listview'
 //   import {getSingerList} from 'api/singer'
 //   import {ERR_OK} from 'api/config'
@@ -95,8 +95,7 @@
 //       ListView
 //     }
 //   }
-
-// </script>
+</script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
   .singer
