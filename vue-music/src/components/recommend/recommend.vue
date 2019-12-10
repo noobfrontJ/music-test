@@ -1,19 +1,18 @@
 <template>
-  <div class="recommend" ref="recommend">
-    <!-- <scroll ref="scroll" class="recommend-content" :data="discList"> -->
-    <div>
-      <div v-if="recommends.length" class="slider-wrapper" ref="sliderWrapper">
-        <slider>
-          <div v-for="item in recommends" v-bind:key="item">
-            <a :href="item.linkUrl">
-              <img class="needsclick" @load="loadImage" :src="item.picUrl" />
-            </a>
-          </div>
-        </slider>
-      </div>
-      <div class="recommend-list">
-        <h1 class="list-title">热门歌单推荐</h1>
-        <!-- <ul>
+  <div class="recommend">
+    <div class="recommend-content">
+      <div v-if="recommends.length" class="slider-wrapper">
+          <slider>
+            <div v-for="item in recommends" v-bind:key="item">
+              <a :href="item.linkUrl">
+                <img :src="item.picUrl" />
+              </a>
+            </div>
+          </slider>
+        </div>
+        <div class="recommend-list">
+          <h1 class="list-title">热门歌单推荐</h1>
+          <!-- <ul>
             <li
               @click="selectItem(item)"
               v-for="item in discList"
@@ -30,17 +29,18 @@
             </li>
           </ul> -->
       </div>
-    </div>
-    <!-- <div class="loading-container" v-show="!discList.length">
+      <!-- <div class="loading-container" v-show="!discList.length">
         <loading></loading>
       </div> -->
-    <!-- </scroll> -->
-    <router-view></router-view>
+      <!-- </scroll> -->
+    </div>
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import Slider from 'base/slider/slider'
+import Scroll from 'base/scroll/scroll'
 import {getRecommend} from 'api/recommend'
 import {ERR_OK} from 'api/config'
 
@@ -58,13 +58,17 @@ export default{
       getRecommend().then((res) => {
         if (res.code === ERR_OK) {
           this.recommends = res.data.slider
-          console.log(res.data.slider)
         }
       })
+      if (this.recommends.length === 0) {
+        let _json = '{"code":0,"data":{"slider":[{"linkUrl":"https://github.com/noobfrontJ/music-test","picUrl":"https://camo.githubusercontent.com/0507272050d2be2ba859459c095cf78b96132d6d/68747470733a2f2f302e67726176617461722e636f6d2f6176617461722f31383963633738643962326331356338626261656662323765373535643136663f643d68747470732533412532462532466769746875622e6769746875626173736574732e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d6726733d3430"},{"linkUrl":"https://github.com/noobfrontJ/music-test","picUrl":"https://camo.githubusercontent.com/0507272050d2be2ba859459c095cf78b96132d6d/68747470733a2f2f302e67726176617461722e636f6d2f6176617461722f31383963633738643962326331356338626261656662323765373535643136663f643d68747470732533412532462532466769746875622e6769746875626173736574732e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d6726733d3430"},{"linkUrl":"https://github.com/noobfrontJ/music-test","picUrl":"https://camo.githubusercontent.com/0507272050d2be2ba859459c095cf78b96132d6d/68747470733a2f2f302e67726176617461722e636f6d2f6176617461722f31383963633738643962326331356338626261656662323765373535643136663f643d68747470732533412532462532466769746875622e6769746875626173736574732e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d6726733d3430"},{"linkUrl":"https://github.com/noobfrontJ/music-test","picUrl":"https://camo.githubusercontent.com/0507272050d2be2ba859459c095cf78b96132d6d/68747470733a2f2f302e67726176617461722e636f6d2f6176617461722f31383963633738643962326331356338626261656662323765373535643136663f643d68747470732533412532462532466769746875622e6769746875626173736574732e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d6726733d3430"}]}}'
+        this.recommends = JSON.parse(_json).data.slider
+      }
     }
   },
   components: {
-    Slider
+    Slider,
+    Scroll
   }
 }
 // import Slider from 'base/slider/slider'
