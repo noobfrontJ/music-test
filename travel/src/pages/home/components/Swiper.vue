@@ -1,5 +1,5 @@
 <template>
-  <swiper :option="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+  <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
     <!-- slides -->
     <swiper-slide>I'm Slide 1</swiper-slide>
     <swiper-slide>I'm Slide 2</swiper-slide>
