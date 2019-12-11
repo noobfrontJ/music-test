@@ -21,14 +21,15 @@ export default {
     .header-left
         width : .64rem
         float : left
+    .header-input
+        flex : 1
+        height : .64rem
+        margin-top : .12rem
+        margin-left : .2rem
+        background : #fff
+        border-radius : .1rem
+        color : #
     .header-right
         width : 1.24rem
         float : right
-    .header-input
-        flex : 1
-        margin-top : .12rem
-        margin-left : .2rem
-        height : .64rem
-        background : #fff
-        border-radius : .1rem
 </style>
