@@ -28,7 +28,7 @@ export default {
         margin-left : .2rem
         background : #fff
         border-radius : .1rem
-        color : #
+        color : #fff
     .header-right
         width : 1.24rem
         float : right
