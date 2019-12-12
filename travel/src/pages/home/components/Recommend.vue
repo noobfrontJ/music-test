@@ -21,32 +21,11 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    recommendList: Array
+  },
   data() {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl:
-            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
-          title: '超级测试',
-          desc: '测试机器性能'
-        },
-        {
-          id: '0002',
-          imgUrl:
-            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
-          title: '大连',
-          desc: '大连测试圣地'
-        },
-        {
-          id: '0003',
-          imgUrl:
-            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
-          title: '大连',
-          desc: '大连测试圣地'
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>

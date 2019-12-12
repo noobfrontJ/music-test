@@ -4,7 +4,7 @@
     <ul>
       <li
         class="item border-bottom"
-        v-for="item of recommendList"
+        v-for="item of weekendList"
         :key="item.id"
       >
         <div class="item-img-wrapper">
@@ -22,32 +22,11 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    weekendList: Array
+  },
   data() {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl:
-            'https://imgs.qunarzz.com/vs_ceph_vs_tts/249448a3-5bd8-4f0c-bac2-aed51a0d7e00.jpg_r_390x260x90_439fee08.jpg',
-          title: '超级测试',
-          desc: '测试机器性能'
-        },
-        {
-          id: '0002',
-          imgUrl:
-            'https://imgs.qunarzz.com/vs_ceph_vs_tts/249448a3-5bd8-4f0c-bac2-aed51a0d7e00.jpg_r_390x260x90_439fee08.jpg',
-          title: '大连',
-          desc: '大连测试圣地'
-        },
-        {
-          id: '0003',
-          imgUrl:
-            'https://imgs.qunarzz.com/vs_ceph_vs_tts/249448a3-5bd8-4f0c-bac2-aed51a0d7e00.jpg_r_390x260x90_439fee08.jpg',
-          title: '大连',
-          desc: '大连测试圣地'
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>
@@ -62,7 +41,7 @@ export default {
 .item-img-wrapper
   overflow : hidden
   height : 0
-  padding-bottom : 33.9%
+  padding-bottom : 37.9%
   .item-img
     width : 100%
 .item-info
