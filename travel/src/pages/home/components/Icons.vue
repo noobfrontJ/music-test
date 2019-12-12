@@ -1,97 +1,107 @@
 <template>
   <div class="icons">
-    <div class="icon">
-      <div class="icon-img">
-        <img
-          class="icon-img-content"
-          src="https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png"
-        />
-      </div>
-      <p class="icon-desc">热名景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img
-          class="icon-img-content"
-          src="https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png"
-        />
-      </div>
-      <p class="icon-desc">热名景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img
-          class="icon-img-content"
-          src="https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png"
-        />
-      </div>
-      <p class="icon-desc">热名景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img
-          class="icon-img-content"
-          src="https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png"
-        />
-      </div>
-      <p class="icon-desc">热名景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img
-          class="icon-img-content"
-          src="https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png"
-        />
-      </div>
-      <p class="icon-desc">热名景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img
-          class="icon-img-content"
-          src="https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png"
-        />
-      </div>
-      <p class="icon-desc">热名景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img
-          class="icon-img-content"
-          src="https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png"
-        />
-      </div>
-      <p class="icon-desc">热名景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img
-          class="icon-img-content"
-          src="https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png"
-        />
-      </div>
-      <p class="icon-desc">热名景点</p>
-    </div>
-    <div class="icon">
-      <div class="icon-img">
-        <img
-          class="icon-img-content"
-          src="https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png"
-        />
-      </div>
-      <p class="icon-desc">热名景点</p>
-    </div>
+    <swiper :options="swiperOption">
+      <swiper-slide v-for="(page, index) of pages" :key="index">
+        <div class="icon" v-for="item of page" :key="item.id">
+          <div class="icon-img">
+            <img class="icon-img-content" :src="item.imgUrl" />
+          </div>
+          <p class="icon-desc">{{ item.desc }}</p>
+        </div>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeIcons'
+  name: 'HomeIcons',
+  data() {
+    return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true
+      },
+      iconList: [
+        {
+          id: '0001',
+          imgUrl:
+            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
+          desc: '热名景点'
+        },
+        {
+          id: '0002',
+          imgUrl:
+            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
+          desc: '滑雪季'
+        },
+        {
+          id: '0003',
+          imgUrl:
+            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
+          desc: '划水'
+        },
+        {
+          id: '0004',
+          imgUrl:
+            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
+          desc: '动植物'
+        },
+        {
+          id: '0005',
+          imgUrl:
+            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
+          desc: '热名景点'
+        },
+        {
+          id: '0006',
+          imgUrl:
+            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
+          desc: '滑雪季'
+        },
+        {
+          id: '0007',
+          imgUrl:
+            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
+          desc: '划水'
+        },
+        {
+          id: '0008',
+          imgUrl:
+            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
+          desc: '动植物'
+        },
+        {
+          id: '0009',
+          imgUrl:
+            'https://img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png',
+          desc: '动植物2'
+        }
+      ]
+    }
+  },
+  computed: {
+    pages() {
+      const pages = []
+      this.iconList.forEach((item, index) => {
+        const page = Math.floor(index / 8)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
+    }
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl';
+@import '~styles/mixins.styl';
+.icons >>> .swiper-container
+    height : 0
+    padding-bottom : 50%
 .icons
     overflow : hidden
     height : 0
@@ -121,4 +131,5 @@ export default {
             text-align : center
             line-height : .44rem
             color : $darkTextColor
+            ellipsis ()
 </style>
