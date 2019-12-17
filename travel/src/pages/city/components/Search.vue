@@ -14,6 +14,7 @@
           class="searach-item border-bottom"
           v-for="item of list"
           :key="item.id"
+          @click="handlerCityClick(item.name)"
         >
           {{ item.name }}
         </li>
@@ -37,6 +38,12 @@ export default {
       keyword: '',
       list: [],
       timer: null
+    }
+  },
+  methods: {
+    handlerCityClick(city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
     }
   },
   computed: {
@@ -82,14 +89,14 @@ export default {
   padding : 0 .1rem
   background : $bgColor
   .search-input
-      box-sizing : border-box
-      width : 100%
-      height : .62rem
-      padding: 0 .1rem
-      line-height : .62rem
-      text-align : center
-      border-radius : .06rem
-      color : #666
+    box-sizing : border-box
+    width : 100%
+    height : .62rem
+    padding: 0 .1rem
+    line-height : .62rem
+    text-align : center
+    border-radius : .06rem
+    color : #666
 .search-content
   z-index : 1
   overflow : hidden
@@ -98,7 +105,7 @@ export default {
   left : 0
   right : 0
   bottom : 0
-  background : green
+  background : #eee
   .searach-item
     line-height : .62rem
     padding-left : .2rem
